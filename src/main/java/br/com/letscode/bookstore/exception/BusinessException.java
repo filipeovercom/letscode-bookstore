@@ -9,7 +9,6 @@ public class BusinessException extends RuntimeException {
         this.type = type;
     }
 
-
     public BusinessException(String message) {
         super(message);
     }
