@@ -8,14 +8,14 @@ import org.springframework.beans.BeanUtils;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookCreatedResponse {
+public class BookEditResponse {
 
     private Long id;
     private String title;
     private Integer pages;
 
-    public static BookCreatedResponse of(Book book) {
-        BookCreatedResponse response = new BookCreatedResponse();
+    public static BookEditResponse of(Book book) {
+        BookEditResponse response = new BookEditResponse();
         BeanUtils.copyProperties(book, response);
         return response;
     }

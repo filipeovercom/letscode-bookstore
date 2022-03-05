@@ -1,18 +1,21 @@
 package br.com.letscode.bookstore.service;
 
+import br.com.letscode.bookstore.exception.BusinessException;
 import br.com.letscode.bookstore.model.Book;
 import br.com.letscode.bookstore.model.BookCreatedResponse;
+import br.com.letscode.bookstore.model.BookEditResponse;
 import br.com.letscode.bookstore.model.CreateBookRequest;
 import br.com.letscode.bookstore.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -33,5 +36,55 @@ public class BookService {
         List<Book> result = new ArrayList<>();
         repository.findAll().forEach(result::add);
         return result;
+    }
+
+    public Book findById(Long id) {
+
+        Optional<Book> optionalBook = repository.findById(id);
+
+        if (optionalBook.isEmpty()) {
+            throw new BusinessException(1, "Não existe livro com o id: " + id);
+        }
+
+        return optionalBook.get();
+
+    }
+
+    public BookEditResponse edit(Long id, CreateBookRequest request) {
+
+        Book receiveBook = Book.of(request);
+
+        Book editBook = findById(id);
+
+        BeanUtils.copyProperties(receiveBook, editBook, "id");
+
+        editBook = repository.save(editBook);
+
+        return BookEditResponse.of(editBook);
+    }
+
+    public BookEditResponse editTitle(Long id, String title) {
+
+        Book editBook = findById(id);
+
+        editBook.setTitle(title);
+
+        editBook = repository.save(editBook);
+
+        return BookEditResponse.of(editBook);
+
+    }
+
+    public void deleteById(Long id) {
+
+        Book editDeleted = findById(id);
+
+        repository.deleteById(editDeleted.getId());
+
+    }
+
+    public Page<Book> getAllBooksPageable(Pageable pageable) {
+
+        return repository.findAll(pageable);
     }
 }
