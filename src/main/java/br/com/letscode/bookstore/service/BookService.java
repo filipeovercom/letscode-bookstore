@@ -33,9 +33,7 @@ public class BookService {
     }
 
     public List<Book> getAllBooks() {
-        List<Book> result = new ArrayList<>();
-        repository.findAll().forEach(result::add);
-        return result;
+        return new ArrayList<>(repository.findAll());
     }
 
     public Book findById(Long id) {
