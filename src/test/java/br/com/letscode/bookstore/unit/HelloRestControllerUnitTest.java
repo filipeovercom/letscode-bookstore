@@ -1,4 +1,4 @@
-package br.com.letscode.bookstore;
+package br.com.letscode.bookstore.unit;
 
 import br.com.letscode.bookstore.controller.HelloRestController;
 import org.junit.jupiter.api.Test;
