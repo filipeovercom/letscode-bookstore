@@ -1,5 +1,6 @@
 # Book Store
 
+[![Build](https://github.com/filipeovercom/letscode-bookstore/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/filipeovercom/letscode-bookstore/actions/workflows/build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=filipeovercom_letscode-bookstore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=filipeovercom_letscode-bookstore)
 
 ### Reference Documentation
