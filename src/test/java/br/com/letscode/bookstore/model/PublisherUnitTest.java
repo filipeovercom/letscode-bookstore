@@ -1,9 +1,10 @@
 package br.com.letscode.bookstore.model;
 
+import br.com.letscode.bookstore.model.entity.Publisher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PublisherUnitTest {
+class PublisherUnitTest {
 
     @Test
     void when_getName_then_shouldNotReturnAnEmptyName() {

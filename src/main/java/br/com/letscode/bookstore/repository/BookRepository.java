@@ -1,6 +1,6 @@
 package br.com.letscode.bookstore.repository;
 
-import br.com.letscode.bookstore.model.Book;
+import br.com.letscode.bookstore.model.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

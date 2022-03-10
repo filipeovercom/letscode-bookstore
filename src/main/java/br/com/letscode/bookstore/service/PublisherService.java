@@ -1,11 +1,10 @@
 package br.com.letscode.bookstore.service;
 
-import br.com.letscode.bookstore.model.Publisher;
+import br.com.letscode.bookstore.model.entity.Publisher;
 
 public class PublisherService {
 
     public Publisher create(Publisher newPublisher) {
-        Publisher result = new Publisher(newPublisher.getName(), newPublisher.getAddress());
-        return result;
+        return new Publisher(newPublisher.getName(), newPublisher.getAddress());
     }
 }

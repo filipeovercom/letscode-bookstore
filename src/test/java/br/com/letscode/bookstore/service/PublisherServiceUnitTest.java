@@ -1,10 +1,10 @@
 package br.com.letscode.bookstore.service;
 
-import br.com.letscode.bookstore.model.Publisher;
+import br.com.letscode.bookstore.model.entity.Publisher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PublisherServiceUnitTest {
+class PublisherServiceUnitTest {
     @Test
     void when_createPublisher_shouldReturnPublisher() {
         Publisher newPublisher = new Publisher("Let's Code", "Rua Qualquer");

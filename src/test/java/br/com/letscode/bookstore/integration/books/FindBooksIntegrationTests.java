@@ -1,9 +1,8 @@
-package br.com.letscode.bookstore.integration;
+package br.com.letscode.bookstore.integration.books;
 
 import br.com.letscode.bookstore.controller.BookRestController;
-import br.com.letscode.bookstore.model.CreateBookRequest;
+import br.com.letscode.bookstore.model.dto.CreateBookRequest;
 import br.com.letscode.bookstore.service.BookService;
-import org.hamcrest.collection.IsArray;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

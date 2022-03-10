@@ -1,10 +1,10 @@
 package br.com.letscode.bookstore.service;
 
 import br.com.letscode.bookstore.exception.BusinessException;
-import br.com.letscode.bookstore.model.Book;
-import br.com.letscode.bookstore.model.BookCreatedResponse;
-import br.com.letscode.bookstore.model.BookEditResponse;
-import br.com.letscode.bookstore.model.CreateBookRequest;
+import br.com.letscode.bookstore.model.entity.Book;
+import br.com.letscode.bookstore.model.dto.BookCreatedResponse;
+import br.com.letscode.bookstore.model.dto.BookEditResponse;
+import br.com.letscode.bookstore.model.dto.CreateBookRequest;
 import br.com.letscode.bookstore.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

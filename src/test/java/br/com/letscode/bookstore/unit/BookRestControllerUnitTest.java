@@ -1,9 +1,8 @@
 package br.com.letscode.bookstore.unit;
 
 import br.com.letscode.bookstore.controller.BookRestController;
-import br.com.letscode.bookstore.model.Book;
+import br.com.letscode.bookstore.model.entity.Book;
 import br.com.letscode.bookstore.service.BookService;
-import org.hamcrest.collection.HasItemInArray;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,12 +11,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class BookRestControllerUnitTest {
+class BookRestControllerUnitTest {
 
     private static final long ID = 10L;
     private static final int PAGES = 250;

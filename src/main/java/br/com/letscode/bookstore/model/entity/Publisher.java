@@ -1,4 +1,4 @@
-package br.com.letscode.bookstore.model;
+package br.com.letscode.bookstore.model.entity;
 
 public class Publisher {
     private String name;
